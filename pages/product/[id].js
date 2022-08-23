@@ -2,7 +2,8 @@ import axios from "axios";
 import React from "react";
 import Image from "next/image";
 import Head from "next/head";
-const Id = ({ data }) => {
+import Recommendation from "../../components/Recommendation"
+const Id = ({ data ,recommendationData}) => {
   return (
     <>
       <Head>
@@ -70,6 +71,7 @@ const Id = ({ data }) => {
           </div>
         </div>
       </section>
+      <Recommendation data={recommendationData} />
     </>
   );
 };
@@ -98,10 +100,14 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await axios(`https://fakestoreapi.com/products/${id}`);
   const data = res.data;
+  const recommendation = await axios(`https://fakestoreapi.com/products`);
+  const recommendationData = recommendation.data;
+
 
   return {
     props: {
       data,
+      recommendationData,
     },
     revalidate: 60,
   };

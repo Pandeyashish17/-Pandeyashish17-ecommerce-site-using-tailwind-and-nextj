@@ -5,7 +5,7 @@ import Banner from "../components/BannerPart/Banner";
 import Card from "../components/Card";
 import { useStateContext } from "../context/StateContext";
 import axios from "axios";
-export default function Home({ data,category }) {
+export default function Home({ data, category }) {
   const { search } = useStateContext();
   return (
     <>
@@ -29,7 +29,7 @@ export async function getStaticProps() {
   return {
     props: {
       data: data.data,
-      category:categories.data
+      category: categories.data,
     },
     revalidate: 60,
   };
