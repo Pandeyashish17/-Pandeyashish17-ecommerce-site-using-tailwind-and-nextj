@@ -1,8 +1,14 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
-    font-family: 'DynaPuff', cursive;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DynaPuff", cursive;
+  scroll-behavior: smooth;
 }

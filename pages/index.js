@@ -14,9 +14,7 @@ export default function Home({ data, category }) {
           <Banner data={category} />
           <Card data={data} />
         </>
-      ) : (
-        <Card />
-      )}
+      ) : null}
     </>
   );
 }

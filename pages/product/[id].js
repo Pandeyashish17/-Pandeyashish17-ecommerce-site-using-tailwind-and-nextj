@@ -2,8 +2,8 @@ import axios from "axios";
 import React from "react";
 import Image from "next/image";
 import Head from "next/head";
-import Recommendation from "../../components/Recommendation"
-const Id = ({ data ,recommendationData}) => {
+import Recommendation from "../../components/Recommendation";
+const Id = ({ data, recommendationData }) => {
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ const Id = ({ data ,recommendationData}) => {
                 <h2 className="font-semibold text-2xl mb-4">{data.title} </h2>
 
                 <p className="mb-4 font-semibold text-xl">
-                  {data.price}{" "}
+                  $ {data.price}{" "}
                   <span className="text-base font-normal">/1 box</span>
                 </p>
 
@@ -102,7 +102,6 @@ export const getStaticProps = async (context) => {
   const data = res.data;
   const recommendation = await axios(`https://fakestoreapi.com/products`);
   const recommendationData = recommendation.data;
-
 
   return {
     props: {

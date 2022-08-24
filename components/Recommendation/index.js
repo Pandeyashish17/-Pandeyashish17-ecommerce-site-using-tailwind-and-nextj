@@ -1,34 +1,42 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { GiSelfLove } from "react-icons/gi";
-import "swiper/css/navigation";
-import { Navigation } from "swiper";
-
-import Link from "next/link";
 import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { GiSelfLove } from "react-icons/gi";
+import Link from "next/link";
 import Image from "next/image";
+import { Parallax, Pagination, Navigation } from "swiper";
 
 import React from "react";
 
 const Index = ({ data }) => {
   return (
     <>
-      <div className="h-5 mb-12">
+      <div className="h-5 mb-12 flex justify-between items-center ">
         {" "}
         <h1 className="text-4xl font-bold ml-6">Recommendation</h1>
       </div>
 
       <Swiper
-        modules={[Navigation]}
-        spaceBetween={50}
-        slidesPerView={3}
-        navigation
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        speed={600}
+        parallax={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Parallax, Pagination, Navigation]}
+        className="mySwiper"
       >
         {data.map((item) => {
           return (
             <SwiperSlide key={item.id}>
               <div className=" group">
                 <Link href={`/product/${item.id}`}>
-                  <article className="  p-3  shadow-sm rounded-lg bg-white border border-gray-200">
+                  <article className="h-[50vh] w-[80vw] p-3  shadow-sm rounded-lg bg-white border border-gray-200">
                     <div className="relative  p-1 flex justify-center items-center">
                       <Image
                         src={item.image}
