@@ -13,8 +13,13 @@ export default function Home({ data, category }) {
         <>
           <Banner data={category} />
           <Card data={data} />
+          <Card data={data} />
+          <Card data={data} />
+          <Card data={data} />
         </>
-      ) : null}
+      ) : (
+        <Card />
+      )}
     </>
   );
 }

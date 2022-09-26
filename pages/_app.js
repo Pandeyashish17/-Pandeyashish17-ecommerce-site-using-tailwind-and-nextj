@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import SearchPart from "../components/SearchPart";
+import { UserProvider } from "@auth0/nextjs-auth0";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,12 +13,14 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>findYourThings</title>
       </Head>
-      <StateContext>
-        <Header />
-        <Navbar />
-        <SearchPart />
-        <Component {...pageProps} />
-      </StateContext>
+      <UserProvider>
+        <StateContext>
+          <Header />
+          <Navbar />
+          <SearchPart />
+          <Component {...pageProps} />
+        </StateContext>
+      </UserProvider>
     </>
   );
 }

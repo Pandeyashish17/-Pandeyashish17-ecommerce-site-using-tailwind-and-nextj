@@ -16,24 +16,10 @@ const Navbar = () => {
                 Products
               </a>
             </Link>
-            <Link href="/services">
-              <a className="px-3 py-2 rounded-md hover:bg-blue-500" href="#">
-                Services
-              </a>
-            </Link>
-            <Link href="/projects">
-              <a className="px-3 py-2 rounded-md hover:bg-blue-500" href="#">
-                Projects
-              </a>
-            </Link>
+
             <Link href="/offers">
               <a className="px-3 py-2 rounded-md hover:bg-blue-500" href="#">
                 Offers
-              </a>
-            </Link>
-            <Link href="/others">
-              <a className="px-3 py-2 rounded-md hover:bg-blue-500" href="#">
-                Others
               </a>
             </Link>
           </nav>
